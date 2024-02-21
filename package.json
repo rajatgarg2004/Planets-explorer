@@ -1,0 +1,20 @@
+{
+  "name": "planets-explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run-backend": "npm run start --prefix back-end",
+    "run-frontend": "npm start --prefix front-end",
+    "run-main": "npm run run-backend & npm run run-frontend",
+    "install-server": "npm init -y",
+    "install-backend": "cd back-end && npm install",
+    "install-frontend": "cd front-end && npm install",
+    "install": "npm run install-server && npm run install-backend && npm run install-frontend",
+    "deploy": "npm run build --prefix front-end && npm run watch --prefix back-end",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
