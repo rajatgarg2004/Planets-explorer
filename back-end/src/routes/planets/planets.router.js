@@ -1,6 +1,6 @@
 const express = require('express');
 const planetsRouter = express.Router();
-const {getAllPlanets} = require('./planets.controller');
-planetsRouter.get('/planets',getAllPlanets);
+const {httpGetAllPlanets} = require('./planets.controller');
+planetsRouter.get('/',httpGetAllPlanets);
 
 module.exports = planetsRouter;
