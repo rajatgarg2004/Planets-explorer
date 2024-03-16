@@ -1,12 +1,14 @@
+const API_URL = "http://localhost:8000/v1";
+
 async function httpGetPlanets() {
-  const data = await fetch('http://localhost:8000/planets');
+  const data = await fetch(`${API_URL}/planets`);
   const result = await data.json();
   console.log(result);
   return result;
 }
 
 async function httpGetLaunches() {
-  const data = await fetch('http://localhost:8000/launches');
+  const data = await fetch(`${API_URL}/launches`);
   let result = await data.json();
   result.sort((a,b)=>{
     return a.flightNumber-b.flightNumber;
@@ -18,7 +20,7 @@ async function httpSubmitLaunch(launch) {
   // TODO: Once API is ready.
   // Submit given launch data to launch system.
   try{
-    return await fetch('http://localhost:8000/launches',{
+    return await fetch(`${API_URL}/launches`,{
     method: 'POST',
     headers: {
       "Content-Type": 'application/json',
@@ -36,7 +38,7 @@ async function httpSubmitLaunch(launch) {
 
 async function httpAbortLaunch(id) {
   try{
-     return await fetch(`http://localhost:8000/launches/${id}`,{
+     return await fetch(`${API_URL}/launches/${id}`,{
       method: 'DELETE',
      })
   }
