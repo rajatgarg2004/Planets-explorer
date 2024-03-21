@@ -8,7 +8,7 @@ jobs:
   build:
     env:
       CI: true
-      MONGO_URL : ${{mongodb-version}}
+      MONGO_URL : ${{matrix.mongodb-version}}
     strategy:
       matrix:
         node-version: [20.x,21.x]
